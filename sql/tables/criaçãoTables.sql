@@ -1,6 +1,6 @@
 
 create table tb_usuario (
-    id 			int not null,
+    id 			int auto_increment,
     nome		varchar(50) not null,
     login		varchar(50) not null,
     senha		varchar(30) not null,
@@ -10,7 +10,7 @@ create table tb_usuario (
 );
 
 create table tb_fornecedor (
-    id 				int not null,
+    id 				int auto_increment,
     nome			varchar(60) not null,
     razaoSocial		varchar(60) not null,
     cnpj			varchar(30) not null,
@@ -25,7 +25,7 @@ create table tb_fornecedor (
 );
 
 create table tb_produto (
-    id 				int not null,
+    id 				int auto_increment,
     nome			varchar(50) not null,
     valor			numeric(6,2), 
     saldo			int,

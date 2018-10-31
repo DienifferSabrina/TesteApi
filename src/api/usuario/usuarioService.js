@@ -30,6 +30,8 @@ async function getById(id){
 async function insert(usuario){
     try {
         const retorno = await usuarioRepository.insert(usuario);
+        console.log(retorno);
+        return retorno;
     } catch (error) {
         throw error;
     }

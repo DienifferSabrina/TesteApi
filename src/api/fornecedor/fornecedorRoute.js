@@ -23,7 +23,7 @@ module.exports = [{
     public: true
 }, {
     verbo: 'delete',
-    rota: '/fornecedor/',
+    rota: '/fornecedor/:id',
     metodo: fornecedorController.exclude,
     public: true
 }

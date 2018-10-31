@@ -17,11 +17,11 @@ async function getById(req){
 }
 
 async function insert(req){
-    return await usuarioService.insert(req.body.usuario);
+    return await usuarioService.insert(req.body);
 }
 
 async function update(req){
-    return await usuarioService.update(req.body.usuario);
+    return await usuarioService.update(req.body);
 }
 
 async function exclude(req){

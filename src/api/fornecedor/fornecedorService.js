@@ -10,21 +10,15 @@ module.exports = {
 }
 
 async function get() {
-    try {
- 
+
      const retorno = await fornecedorRepository.get();
- 
-    } catch (error) {
-        throw error;
-    }
+
  } 
  
  async function getById(id){
-     try {
-         const retorno = await fornecedorRepository.getById(id);
-     } catch (error) {
-         throw error;
-     }
+    
+    const retorno = await fornecedorRepository.getById(id);
+     
  }
  
  async function insert(fornecedor){
