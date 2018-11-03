@@ -18,12 +18,12 @@ module.exports = [{
     
 }, {
     verbo: 'put',
-    rota: '/usuario/',
+    rota: '/usuario/:id',
     metodo: usuarioController.update,
     public: true
 }, {
     verbo: 'delete',
-    rota: '/usuario/',
+    rota: '/usuario/:id',
     metodo: usuarioController.exclude,
     public: true
 }

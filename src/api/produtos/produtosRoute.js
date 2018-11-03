@@ -18,12 +18,12 @@ module.exports = [{
     
 }, {
     verbo: 'put',
-    rota: '/produtos/',
+    rota: '/produtos/:id',
     metodo: produtosController.update,
     public: true
 }, {
     verbo: 'delete',
-    rota: '/produtos/',
+    rota: '/produtos/:id',
     metodo: produtosController.exclude,
     public: true
 }

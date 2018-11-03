@@ -17,11 +17,11 @@ async function getById(req){
 }
 
 async function insert(req){
-    return await produtosService.insert(req.body.produtos);
+    return await produtosService.insert(req.body);
 }
 
 async function update(req){
-    return await produtosService.update(req.body.produtos);
+    return await produtosService.update(req.body, req.params.id);
 }
 
 async function exclude(req){

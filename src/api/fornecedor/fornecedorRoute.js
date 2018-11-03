@@ -18,7 +18,7 @@ module.exports = [{
     
 }, {
     verbo: 'put',
-    rota: '/fornecedor/',
+    rota: '/fornecedor/:id',
     metodo: fornecedorController.update,
     public: true
 }, {

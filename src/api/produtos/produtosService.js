@@ -10,44 +10,27 @@ module.exports = {
 }
 
 async function get() {
-   try {
-
-    const retorno = await produtosRepository.get();
-
-   } catch (error) {
-       throw error;
-   }
+    const data = await produtosRepository.get();
+    return data;
 } 
 
 async function getById(id){
-    try {
-        const retorno = await produtosRepository.getById(id);
-    } catch (error) {
-        throw error;
-    }
+    const data = await produtosRepository.getById(id);
+    return data;
 }
 
 async function insert(produtos){
-    try {
-        const retorno = await produtosRepository.insert(produtos);
-    } catch (error) {
-        throw error;
-    }
+    const data = await produtosRepository.insert(produtos);
+    return data;
 }
 
-async function update(produtos){
-    try {
-        const retorno = await produtosRepository.update(produtos);
-    } catch (error) {
-        throw error;
-    }
+async function update(produtos, id){
+    const data = await produtosRepository.update(produtos, id);
+    return data;
 }
 
 async function exclude(id){
-    try {
-        const retorno = await produtosRepository.exclude(id);
-    } catch (error) {
-        throw error;
-    }
+    const data = await produtosRepository.exclude(id);
+    return data;
 }
     

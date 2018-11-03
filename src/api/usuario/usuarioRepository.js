@@ -9,30 +9,56 @@ module.exports = {
 }
 
 async function get() {
-    
-}
-
-async function getById(id) {
-    
-}
-
-async function insert(usuario) {
-    console.log(usuario);
     return new Promise(function(resolve, reject){
-        database.query(`INSERT INTO tb_usuario (nome, login, senha, email)
-                        VALUES('${usuario.nome}', '${usuario.login}', '${usuario.senha}', '${usuario.email}')`,
+        database.query(`select * from tb_usuario;`,
         (error, results, fields) => {
             if(error) reject(error);
-            console.log(fields);
             resolve(results);
         });
     }); 
 }
 
-async function update(usuario) {
-    
+async function getById(id) {
+    return new Promise(function(resolve, reject){
+        database.query(`select * from tb_usuario where id = ${id};`,
+        (error, results, fields) => {
+            if(error) reject(error);
+            resolve(results);
+        });
+    }); 
+}
+
+async function insert(usuario) {
+
+    return new Promise(function(resolve, reject){
+        database.query(`INSERT INTO tb_usuario (nome, login, senha, email)
+                        VALUES('${usuario.nome}', '${usuario.login}', '${usuario.senha}', '${usuario.email}')`,
+        (error, results, fields) => {
+            if(error) reject(error);
+            resolve(results);
+        });
+    }); 
+}
+
+async function update(usuario, id) {
+
+    return new Promise(function(resolve, reject){
+        database.query(`update tb_usuario 
+                        set nome ='${usuario.nome}', login ='${usuario.login}', senha ='${usuario.senha}', email ='${usuario.email}'
+                        where id = ${id}`,
+        (error, results, fields) => {
+            if(error) reject(error);
+            resolve(results);
+        });
+    }); 
 }
 
 async function exclude(id) {
-    
+    return new Promise(function(resolve, reject){
+        database.query(`delete from tb_usuario where id = ${id};`,
+        (error, results, fields) => {
+            if(error) reject(error);
+            resolve(results);
+        });
+    });
 }

@@ -21,7 +21,7 @@ async function insert(req){
 }
 
 async function update(req){
-    return await usuarioService.update(req.body);
+    return await usuarioService.update(req.body, req.params.id);
 }
 
 async function exclude(req){
