@@ -5,7 +5,8 @@ module.exports = {
     getById,
     insert,
     update,
-    exclude
+    exclude,
+    getByUser
 }
 
 async function get() {
@@ -26,6 +27,16 @@ async function getById(id) {
             resolve(results);
         });
     }); 
+}
+
+async function getByUser(user) {
+    return new Promise(function(resolve, reject){
+        database.query(`select * from tb_usuario where login = '${user}';`,
+        (error, results, fields) => {
+            if(error) reject(error);
+            resolve(results);
+        });
+    });  
 }
 
 async function insert(usuario) {

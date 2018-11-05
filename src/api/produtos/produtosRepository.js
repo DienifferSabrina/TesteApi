@@ -10,7 +10,10 @@ module.exports = {
 
 async function get() {
     return new Promise(function(resolve, reject){
-        database.query(`select * from tb_produto;`,
+        database.query(`select prod.id, prod.nome, prod.valor, prod.saldo, fo.nome as fornecedor 
+                        from tb_produto prod
+                        inner join tb_fornecedor fo on prod.id_fornecedor = fo.id
+                        order by prod.id asc;`,
         (error, results, fields) => {
             if(error) reject(error);
             resolve(results);
