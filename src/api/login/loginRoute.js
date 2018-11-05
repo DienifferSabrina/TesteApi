@@ -1,8 +1,8 @@
 const loginController = require('./loginController');
 
 module.exports = [{
-    verbo: 'get',
-    rota: '/login/:user/:password',
+    verbo: 'post',
+    rota: '/login/',
     metodo: loginController.login,
     public: true
 }];

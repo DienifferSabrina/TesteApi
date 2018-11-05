@@ -19,7 +19,6 @@ async function login(user) {
     }
 
     const usuario = await usuarioRepository.getByUser(user.login);
-    console.log(usuario);
     return usuario;
 
 }

@@ -6,8 +6,8 @@ module.exports = {
 
 async function login(req) {
     let user = {
-        login: req.params.user,
-        senha: req.params.password
+        login: req.body.login,
+        senha: req.body.senha
     }
 
     return await loginService.login(user);
