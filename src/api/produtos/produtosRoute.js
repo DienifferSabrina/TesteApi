@@ -2,7 +2,7 @@ const produtosController = require('./produtosController');
 
 module.exports = [{
     verbo: 'get',
-    rota: '/produtos/',
+    rota: '/produtos/all/:page?',
     metodo: produtosController.get,
     public: true
 }, {

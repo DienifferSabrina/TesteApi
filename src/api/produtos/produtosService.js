@@ -1,5 +1,6 @@
 const produtosRepository = require('./produtosRepository'),
 error = require('../../configs/error');
+const utils = require('../../configs/utils');
 
 module.exports = {
     get,
@@ -9,9 +10,11 @@ module.exports = {
     exclude
 }
 
-async function get() {
-    const data = await produtosRepository.get();
-    return data;
+async function get(req) {
+    const limits = utils.defineLimit(req.params.page);
+    const data = await produtosRepository.get(limits);
+    const dataCount = await produtosRepository.count();
+    return utils.responseHelpers(data, dataCount, req.params.page);
 } 
 
 async function getById(id){
