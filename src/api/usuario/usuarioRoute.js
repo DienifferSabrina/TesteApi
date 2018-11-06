@@ -2,7 +2,7 @@ const usuarioController = require('./usuarioController');
 
 module.exports = [{
     verbo: 'get',
-    rota: '/usuario/',
+    rota: '/usuario/all/:page?',
     metodo: usuarioController.get,
     public: true
 }, {

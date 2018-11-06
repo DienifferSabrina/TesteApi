@@ -1,8 +1,10 @@
-const fornecedorRepository = require('./fornecedorRepository'),
-error = require('../../configs/error');
+const fornecedorRepository = require('./fornecedorRepository');
+const error = require('../../configs/error');
+const utils = require('../../configs/utils');
 
 module.exports = {
     get,
+    getAll,
     getById,
     insert,
     update,
@@ -11,7 +13,14 @@ module.exports = {
 
 async function get() {
      const data = await fornecedorRepository.get();
-     return data;
+     return data
+ } 
+
+ async function getAll(req) {
+    const limits = utils.defineLimit(req.params.page);
+     const data = await fornecedorRepository.getAll(limits);
+     const dataCount = await fornecedorRepository.count();
+     return utils.responseHelpers(data, dataCount, req.params.page);
  } 
  
  async function getById(id){

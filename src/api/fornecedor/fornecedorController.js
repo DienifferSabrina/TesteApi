@@ -2,6 +2,7 @@ const fornecedorService = require('./fornecedorService');
 
 module.exports = {
     get,
+    getAll,
     getById,
     insert,
     update,
@@ -10,6 +11,10 @@ module.exports = {
 
 async function get() {
     return await fornecedorService.get();
+}
+
+async function getAll(req) {
+    return await fornecedorService.getAll(req);
 }
 
 async function getById(req){

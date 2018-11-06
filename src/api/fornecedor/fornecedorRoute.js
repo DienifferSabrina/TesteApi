@@ -5,6 +5,11 @@ module.exports = [{
     rota: '/fornecedor/',
     metodo: fornecedorController.get,
     public: true
+},{
+    verbo: 'get',
+    rota: '/fornecedor/all/:page?',
+    metodo: fornecedorController.getAll,
+    public: true
 }, {
     verbo: 'get',
     rota: '/fornecedor/:id',

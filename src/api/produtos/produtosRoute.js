@@ -7,23 +7,23 @@ module.exports = [{
     public: true
 }, {
     verbo: 'get',
-    rota: '/produtos/:id',
+    rota: '/produto/:id',
     metodo: produtosController.getById,
     public: true
 },{
     verbo: 'post',
-    rota: '/produtos/',
+    rota: '/produto/',
     metodo: produtosController.insert,
     public: true
     
 }, {
     verbo: 'put',
-    rota: '/produtos/:id',
+    rota: '/produto/:id',
     metodo: produtosController.update,
     public: true
 }, {
     verbo: 'delete',
-    rota: '/produtos/:id',
+    rota: '/produto/:id',
     metodo: produtosController.exclude,
     public: true
 }

@@ -1,6 +1,7 @@
 const database = require('./../../configs/database');
 
 module.exports = {
+    count,
     get,
     getById,
     insert,
@@ -9,9 +10,20 @@ module.exports = {
     getByUser
 }
 
-async function get() {
+async function count() {
+    return new Promise(function (resolve, reject) {
+        database.query(`select count(*) as count from tb_usuario`,
+            (error, results, fields) => {
+                if (error) reject(error);
+                resolve(results);
+            });
+    });
+}
+
+async function get(limits) {
     return new Promise(function(resolve, reject){
-        database.query(`select * from tb_usuario;`,
+        database.query(`select * from tb_usuario
+                        limit ${limits[0]} OFFSET ${limits[1]};`,
         (error, results, fields) => {
             if(error) reject(error);
             resolve(results);

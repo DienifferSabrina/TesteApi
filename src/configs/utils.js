@@ -1,6 +1,6 @@
 const qtdPerPage = parseInt(process.env.NUMBER_PER_PAGE); 
 
-function defineLimit(page = 0) {
+function defineLimit(page = 1) {
   page = parseInt(page) - 1;
   return [
     qtdPerPage,

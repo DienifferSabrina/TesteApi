@@ -42,10 +42,10 @@ async function getById(id) {
     });
 }
 
-async function insert(produtos) {
+async function insert(produto) {
     return new Promise(function(resolve, reject){
         database.query(`INSERT INTO tb_produto (nome, valor, saldo, id_fornecedor)
-                        VALUES('${produtos.nome}', ${produtos.valor}, ${produtos.saldo}, ${produtos.id_fornecedor})`,
+                        VALUES('${produto.nome}', ${produto.valor}, ${produto.saldo}, ${produto.id_fornecedor})`,
         (error, results, fields) => {
             if(error) reject(error);
             resolve(results);
@@ -53,10 +53,10 @@ async function insert(produtos) {
     }); 
 }
 
-async function update(produtos, id) {
+async function update(produto, id) {
     return new Promise(function(resolve, reject){
         database.query(`update tb_produto 
-                        set nome ='${produtos.nome}', valor =${produtos.valor}, saldo =${produtos.saldo}, id_fornecedor =${produtos.id_fornecedor}
+                        set nome ='${produto.nome}', valor =${produto.valor}, saldo =${produto.saldo}, id_fornecedor =${produto.id_fornecedor}
                         where id = ${id}`,
         (error, results, fields) => {
             if(error) reject(error);

@@ -1,5 +1,5 @@
-const produtosRepository = require('./produtosRepository'),
-error = require('../../configs/error');
+const produtosRepository = require('./produtosRepository');
+const error = require('../../configs/error');
 const utils = require('../../configs/utils');
 
 module.exports = {
@@ -22,13 +22,13 @@ async function getById(id){
     return data;
 }
 
-async function insert(produtos){
-    const data = await produtosRepository.insert(produtos);
+async function insert(produto){
+    const data = await produtosRepository.insert(produto);
     return data;
 }
 
-async function update(produtos, id){
-    const data = await produtosRepository.update(produtos, id);
+async function update(produto, id){
+    const data = await produtosRepository.update(produto, id);
     return data;
 }
 

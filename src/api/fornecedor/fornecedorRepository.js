@@ -1,16 +1,39 @@
 const database = require('./../../configs/database');
 
 module.exports = {
+    count,
     get,
+    getAll,
     getById,
     insert,
     update,
     exclude
 }
 
+async function count() {
+    return new Promise(function (resolve, reject) {
+        database.query(`select count(*) as count from tb_fornecedor`,
+            (error, results, fields) => {
+                if (error) reject(error);
+                resolve(results);
+            });
+    });
+}
+
 async function get() {
     return new Promise(function(resolve, reject){
         database.query(`select * from tb_fornecedor;`,
+        (error, results, fields) => {
+            if(error) reject(error);
+            resolve(results);
+        });
+    }); 
+}
+
+async function getAll(limits) {
+    return new Promise(function(resolve, reject){
+        database.query(`select * from tb_fornecedor
+                        limit ${limits[0]} OFFSET ${limits[1]};`,
         (error, results, fields) => {
             if(error) reject(error);
             resolve(results);

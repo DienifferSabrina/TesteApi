@@ -8,8 +8,8 @@ module.exports = {
     exclude
 };
 
-async function get() {
-    return await usuarioService.get();
+async function get(req) {
+    return await usuarioService.get(req);
 }
 
 async function getById(req){
